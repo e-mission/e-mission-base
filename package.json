@@ -35,7 +35,10 @@
       },
       "edu.berkeley.eecs.emission.cordova.auth": {},
       "cordova-plugin-whitelist": {},
-      "edu.berkeley.eecs.emission.cordova.transitionnotify": {}
+      "edu.berkeley.eecs.emission.cordova.transitionnotify": {},
+      "phonegap-plugin-barcodescanner": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      }
     }
   },
   "dependencies": {
@@ -63,6 +66,7 @@
     "fs-extra": "^5.0.0",
     "ionic-plugin-keyboard": "~2.2.1",
     "klaw-sync": "^3.0.2",
+    "phonegap-plugin-barcodescanner": "^7.1.0",
     "phonegap-plugin-push": "~1.9.2"
   }
 }

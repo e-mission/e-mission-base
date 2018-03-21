@@ -9,13 +9,36 @@ angular.module('emission.controllers', ['emission.splash.updatecheck',
 .controller('DashCtrl', function($scope) {})
 
 .controller('SplashCtrl', function($scope, $state, $interval, $rootScope, 
-    UpdateCheck, PushNotify,
-    LocalNotify)  {
+    $ionicPlatform, $ionicPopup, UpdateCheck, LocalNotify)  {
   console.log('SplashCtrl invoked');
       // alert("attach debugger!");
       // PushNotify.startupInit();
   console.log('SplashCtrl invoke finished');
-})
+
+  $ionicPlatform.ready(function() {
+    $scope.scanEnabled = true;
+  });
+
+  $scope.scanCode = function() {
+    if (!$scope.scanEnabled) {
+        $ionicPopup.alert({template: "plugins not yet initialized, please retry later"});
+    } else {
+      cordova.plugins.barcodeScanner.scan(
+        function (result) {
+            if (result.format == "QR_CODE" && 
+                result.cancelled == false && 
+                result.text.substring(0,11) == "emission://") {
+                handleOpenURL(result.text);
+            } else {
+                $ionicPopup.alert({template: "invalid study reference "+result.text});
+            }
+        },
+        function (error) {
+            $ionicPopup.alert({template: "Scanning failed: " + error});
+        });
+    }
+  }; // scanCode
+}) // controller
 
 
 .controller('ChatsCtrl', function($scope, Chats) {
