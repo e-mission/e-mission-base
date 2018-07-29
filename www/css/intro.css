@@ -26,13 +26,13 @@
 }
 
 .intro-title {
-  padding-top: 10%;
+  padding-top: 8%;
   padding-right: 8%;
   padding-left: 8%;
   font-size: 18px;
 }
 .intro-text {
-  padding-top: 5%;
+  padding-top: 0%;
   padding-right: 8%;
   padding-left: 8%;
   font-size: 15px;
@@ -42,9 +42,8 @@
 .intro-space {
   height: 15px;
 }
-#intro-footer {
-  padding: 15px;
-  height: 90px;
+.intro-footer {
+  padding-bottom: 5px;
 }
 .consent-title {
   padding-top: 10%;
