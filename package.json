@@ -60,7 +60,7 @@
     "cordova-plugin-whitelist": "~1.3.3",
     "cordova-plugin-x-socialsharing": "~5.2.1",
     "de.appplant.cordova.plugin.local-notification-ios9-fix": "https://github.com/shankari/cordova-plugin-local-notifications.git",
-    "edu.berkeley.eecs.emission.cordova.auth": "https://github.com/e-mission/cordova-jwt-auth.git", 
+    "edu.berkeley.eecs.emission.cordova.auth": "https://github.com/e-mission/cordova-jwt-auth.git",
     "edu.berkeley.eecs.emission.cordova.comm": "https://github.com/e-mission/cordova-server-communication.git",
     "edu.berkeley.eecs.emission.cordova.datacollection": "https://github.com/e-mission/e-mission-data-collection.git",
     "edu.berkeley.eecs.emission.cordova.serversync": "https://github.com/e-mission/cordova-server-sync.git",
