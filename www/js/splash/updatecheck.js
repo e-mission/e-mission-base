@@ -122,7 +122,7 @@ angular.module('emission.splash.updatecheck', ['emission.plugin.logger',
       });
       uc.extractPromise().then(function(res) {
           extractPop.close();
-          alert("extract -> reload");
+          // alert("extract -> reload");
           Logger.log('Ionic Deploy: Update Success! ' + res);
           var reloadAlert = $ionicPopup.alert({
             title: "Update done, reloading..."

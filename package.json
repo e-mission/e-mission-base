@@ -28,12 +28,6 @@
       "edu.berkeley.eecs.emission.cordova.usercache": {},
       "edu.berkeley.eecs.emission.cordova.datacollection": {},
       "edu.berkeley.eecs.emission.cordova.serversync": {},
-      "cordova-plugin-whitelist": {},
-      "edu.berkeley.eecs.emission.cordova.transitionnotify": {},
-      "phonegap-plugin-barcodescanner": {
-        "ANDROID_SUPPORT_V4_VERSION": "27.+"
-      },
-      "edu.berkeley.eecs.emission.cordova.auth": {},
       "cordova-plugin-ionic": {
         "APP_ID": "e0d8cdec",
         "CHANNEL_NAME": "Production",
@@ -42,7 +36,13 @@
         "UPDATE_API": "https://api.ionicjs.com",
         "MAX_STORE": "2",
         "MIN_BACKGROUND_DURATION": "30"
-      }
+      },
+      "cordova-plugin-whitelist": {},
+      "edu.berkeley.eecs.emission.cordova.transitionnotify": {},
+      "phonegap-plugin-barcodescanner": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "edu.berkeley.eecs.emission.cordova.auth": {}
     }
   },
   "dependencies": {
@@ -66,7 +66,7 @@
     "edu.berkeley.eecs.emission.cordova.settings": "https://github.com/e-mission/cordova-connection-settings.git",
     "edu.berkeley.eecs.emission.cordova.unifiedlogger": "https://github.com/e-mission/cordova-unified-logger.git",
     "edu.berkeley.eecs.emission.cordova.usercache": "https://github.com/e-mission/cordova-usercache.git",
-    "em-cordova-jwt-auth": "file:../cordova-jwt-auth",
+    "edu.berkeley.eecs.emission.cordova.auth": "https://github.com/e-mission/cordova-jwt-auth.git", 
     "em-cordova-transition-notify": "git+https://github.com/e-mission/e-mission-transition-notify.git",
     "fs-extra": "^5.0.0",
     "ionic-plugin-keyboard": "~2.2.1",
