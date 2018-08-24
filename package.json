@@ -29,9 +29,13 @@
       "edu.berkeley.eecs.emission.cordova.datacollection": {},
       "edu.berkeley.eecs.emission.cordova.serversync": {},
       "cordova-plugin-ionic": {
-        "APP_ID": "6ab82e2d",
+        "APP_ID": "e0d8cdec",
         "CHANNEL_NAME": "Production",
-        "UPDATE_METHOD": "none"
+        "UPDATE_METHOD": "none",
+        "WARN_DEBUG": "true",
+        "UPDATE_API": "https://api.ionicjs.com",
+        "MAX_STORE": "2",
+        "MIN_BACKGROUND_DURATION": "30"
       },
       "edu.berkeley.eecs.emission.cordova.auth": {},
       "cordova-plugin-whitelist": {},
@@ -50,7 +54,9 @@
     "cordova-plugin-email-composer": "~0.8.12",
     "cordova-plugin-file": "~6.0.1",
     "cordova-plugin-inappbrowser": "https://github.com/shankari/cordova-plugin-inappbrowser.git",
-    "cordova-plugin-ionic": "~3.0.0",
+    "cordova-plugin-ionic": "^5.0.9",
+    "cordova-plugin-ionic-webview": "^2.1.0",
+    "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-whitelist": "~1.3.3",
     "cordova-plugin-x-socialsharing": "~5.2.1",
     "de.appplant.cordova.plugin.local-notification-ios9-fix": "https://github.com/shankari/cordova-plugin-local-notifications.git",
