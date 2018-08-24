@@ -30,13 +30,11 @@ angular.module('emission.splash.updatecheck', ['emission.plugin.logger',
         Logger.log("currChannel == null, skipping deploy init");
         return Promise.resolve(null);
     } else {
-        return new Promise(function(resolve, reject) {
-            var config = {
-                appId: "e0d8cdec",
-                channel: currChannel
-            }
-            deploy.init(config, resolve, reject);
-        });
+        var config = {
+            appId: "e0d8cdec",
+            channel: currChannel
+        }
+        return deploy.configure(config);
     }
   };
 
@@ -52,44 +50,27 @@ angular.module('emission.splash.updatecheck', ['emission.plugin.logger',
 
   uc.checkPromise = function() {
     var deploy = $window.IonicCordova.deploy;
-    return new Promise(function(resolve, reject) {
-        deploy.check(resolve, reject);
-    });
+    return deploy.checkForUpdate();
   };
 
   uc.downloadPromise = function() {
     var deploy = $window.IonicCordova.deploy;
-    return new Promise(function(resolve, reject) {
-        deploy.download(function(res) {
-            if(res == 'true') {
-                resolve(res);
-            } else {
-                updateProgress(res);
-            }
-        }, reject);
+    return deploy.downloadUpdate(function(res) {
+        updateProgress(res);
     });
   };
 
   uc.extractPromise = function() {
     var deploy = $window.IonicCordova.deploy;
-    return new Promise(function(resolve, reject) {
-        deploy.extract(function(res) {
-            console.log("extract progress = "+res);
-            var expectedResult = $window.cordova.platformId == "ios"? "done": "true";
-            if(res == expectedResult) {
-                resolve(res);
-            } else {
-                updateProgress(res);
-            }
-        }, reject);
+    return deploy.extractUpdate(function(res) {
+        console.log("extract progress = "+res);
+        updateProgress(res);
     });
   };
 
   uc.redirectPromise = function() {
     var deploy = $window.IonicCordova.deploy;
-    return new Promise(function(resolve, reject) {
-        deploy.redirect(resolve, reject);
-    });
+    return deploy.reloadApp();
   };
 
   uc.handleClientChangeURL = function(urlComponents) {
@@ -106,7 +87,7 @@ angular.module('emission.splash.updatecheck', ['emission.plugin.logger',
     uc.checkForUpdates();
   };
 
-  // Default to dev
+  // Default to blank == Production
   var getChannelToUse = function() {
       var channel = uc.getChannel();
       if (channel == null || channel == "") {
@@ -115,9 +96,6 @@ angular.module('emission.splash.updatecheck', ['emission.plugin.logger',
       };
       console.log("Returning channel "+channel)
       return channel;
-  }
-
-  var showProgressDialog = function(title) {
   }
 
   var applyUpdate = function() {
@@ -132,6 +110,7 @@ angular.module('emission.splash.updatecheck', ['emission.plugin.logger',
       buttons: []
     });
     uc.downloadPromise().then(function() {
+      Logger.log("downloadPromise resolved!!");
       $rootScope.progress = 0;
       downloadPop.close();
       // alert("download -> extract");
@@ -143,7 +122,7 @@ angular.module('emission.splash.updatecheck', ['emission.plugin.logger',
       });
       uc.extractPromise().then(function(res) {
           extractPop.close();
-          // alert("extract -> reload");
+          alert("extract -> reload");
           Logger.log('Ionic Deploy: Update Success! ' + res);
           var reloadAlert = $ionicPopup.alert({
             title: "Update done, reloading..."
@@ -162,9 +141,9 @@ angular.module('emission.splash.updatecheck', ['emission.plugin.logger',
     var currChannel = getChannelToUse();
     uc.setChannelPromise(currChannel).then(function() {
     Logger.log("deploy init complete ");
-    uc.checkPromise().then(function(hasUpdate) {
-      Logger.log('Ionic Deploy: Update available: ' + hasUpdate);
-      if (hasUpdate == 'true') {
+    uc.checkPromise().then(function(updateResponse) {
+      Logger.log('Ionic Deploy: Update available: ' + JSON.stringify(updateResponse));
+      if (updateResponse.available == true) {
         Logger.log('Ionic Deploy: found update, asking user: ');
 
         $ionicPopup.show({
