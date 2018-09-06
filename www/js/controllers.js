@@ -9,7 +9,7 @@ angular.module('emission.controllers', ['emission.splash.updatecheck',
 .controller('DashCtrl', function($scope) {})
 
 .controller('SplashCtrl', function($scope, $state, $interval, $rootScope, 
-    $ionicPlatform, $ionicPopup, UpdateCheck, LocalNotify)  {
+    $ionicPlatform, $ionicPopup, $ionicPopover, UpdateCheck, LocalNotify)  {
   console.log('SplashCtrl invoked');
       // alert("attach debugger!");
       // PushNotify.startupInit();
@@ -18,6 +18,24 @@ angular.module('emission.controllers', ['emission.splash.updatecheck',
   $ionicPlatform.ready(function() {
     $scope.scanEnabled = true;
   });
+
+  $ionicPopover.fromTemplateUrl('templates/about-app.html', {
+    backdropClickToClose: true,
+    hardwareBackButtonClose: true,
+    scope: $scope
+  }).then(function(popover) {
+    $scope.popover = popover;
+    $scope.isIOS = $ionicPlatform.is('ios');
+    $scope.isAndroid = $ionicPlatform.is('android');
+  });
+
+  $scope.showDetails = function($event) {
+    $scope.popover.show($event)
+  }
+
+  $scope.hideDetails = function($event) {
+    $scope.popover.hide($event)
+  }
 
   $scope.scanCode = function() {
     if (!$scope.scanEnabled) {
