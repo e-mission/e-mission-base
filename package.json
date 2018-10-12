@@ -22,12 +22,14 @@
       "cordova-plugin-x-socialsharing": {},
       "cordova-plugin-inappbrowser": {},
       "de.appplant.cordova.plugin.local-notification-ios9-fix": {},
-      "edu.berkeley.eecs.emission.cordova.settings": {},
-      "edu.berkeley.eecs.emission.cordova.unifiedlogger": {},
+      "edu.berkeley.eecs.emission.cordova.auth": {},
       "edu.berkeley.eecs.emission.cordova.comm": {},
-      "edu.berkeley.eecs.emission.cordova.usercache": {},
       "edu.berkeley.eecs.emission.cordova.datacollection": {},
       "edu.berkeley.eecs.emission.cordova.serversync": {},
+      "edu.berkeley.eecs.emission.cordova.settings": {},
+      "edu.berkeley.eecs.emission.cordova.transitionnotify": {},
+      "edu.berkeley.eecs.emission.cordova.unifiedlogger": {},
+      "edu.berkeley.eecs.emission.cordova.usercache": {},
       "cordova-plugin-ionic": {
         "APP_ID": "e0d8cdec",
         "CHANNEL_NAME": "Production",
@@ -35,9 +37,7 @@
         "UPDATE_API": "https://api.ionicjs.com",
         "MAX_STORE": "2"
       },
-      "edu.berkeley.eecs.emission.cordova.auth": {},
       "cordova-plugin-whitelist": {},
-      "edu.berkeley.eecs.emission.cordova.transitionnotify": {},
       "phonegap-plugin-barcodescanner": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       }
@@ -61,9 +61,9 @@
     "edu.berkeley.eecs.emission.cordova.datacollection": "https://github.com/e-mission/e-mission-data-collection.git",
     "edu.berkeley.eecs.emission.cordova.serversync": "https://github.com/e-mission/cordova-server-sync.git",
     "edu.berkeley.eecs.emission.cordova.settings": "https://github.com/e-mission/cordova-connection-settings.git",
+    "edu.berkeley.eecs.emission.cordova.transitionnotify": "https://github.com/e-mission/e-mission-transition-notify.git",
     "edu.berkeley.eecs.emission.cordova.unifiedlogger": "https://github.com/e-mission/cordova-unified-logger.git",
     "edu.berkeley.eecs.emission.cordova.usercache": "https://github.com/e-mission/cordova-usercache.git",
-    "em-cordova-transition-notify": "git+https://github.com/e-mission/e-mission-transition-notify.git",
     "fs-extra": "^5.0.0",
     "ionic-plugin-keyboard": "~2.2.1",
     "klaw-sync": "^3.0.2",
