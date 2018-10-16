@@ -3,17 +3,16 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'emission' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'emission.services' is found in services.js
 // 'emission.controllers' is found in controllers.js
 'use strict';
 
 angular.module('emission', ['ionic',
-    'emission.controllers','emission.services', 'emission.plugin.logger',
-    'emission.splash.customURLScheme', 'emission.splash.referral',
+    'emission.controllers', 'emission.plugin.logger',
+    'emission.splash.customURLScheme',
     'emission.splash.updatecheck'])
 
 .run(function($ionicPlatform, $rootScope, $http, Logger,
-    CustomURLScheme, ReferralHandler, UpdateCheck) {
+    CustomURLScheme, UpdateCheck) {
   console.log("Starting run");
   // alert("Starting run");
   // BEGIN: Global listeners, no need to wait for the platform
@@ -24,10 +23,7 @@ angular.module('emission', ['ionic',
     console.log("GOT URL:"+url);
     // alert("GOT URL:"+url);
 
-    if (urlComponents.route == 'join') {
-      ReferralHandler.setupGroupReferral(urlComponents);
-      StartPrefs.loadWithPrefs();
-    } else if (urlComponents.route == 'change_client') {
+    if (urlComponents.route == 'change_client') {
       UpdateCheck.handleClientChangeURL(urlComponents);
     }
   });
@@ -46,19 +42,12 @@ angular.module('emission', ['ionic',
       StatusBar.styleDefault();
     }
 
-    // Configure the connection settings
-    Logger.log("about to get connection config");
-    $http.get("json/connectionConfig.json").then(function(connectionConfig) {
-        Logger.log("connectionConfigString = "+JSON.stringify(connectionConfig.data));
-        window.cordova.plugins.BEMConnectionSettings.setSettings(connectionConfig.data);
+    Logger.log("setting connection to default since this is emTripLog");
+    window.cordova.plugins.BEMConnectionSettings.getDefaultSettings().then(function(defaultConfig) {
+        Logger.log("defaultConfig = "+JSON.stringify(defaultConfig));
+        window.cordova.plugins.BEMConnectionSettings.setSettings(defaultConfig);
     }).catch(function(err) {
-        Logger.log("error "+err+" while reading connection config, reverting to defaults");
-        window.cordova.plugins.BEMConnectionSettings.getDefaultSettings().then(function(defaultConfig) {
-            Logger.log("defaultConfig = "+defaultConfig);
-            window.cordova.plugins.BEMConnectionSettings.setSettings(defaultConfig);
-        }).catch(function(err) {
-            Logger.log("error "+err+" reading or setting defaults, giving up");
-        });
+        Logger.log("error "+JSON.stringify(err)+" reading or setting defaults, giving up");
     });
   });
   console.log("Ending run");

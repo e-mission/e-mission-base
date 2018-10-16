@@ -1,15 +1,13 @@
 'use strict';
 
-angular.module('emission.controllers', ['emission.splash.updatecheck',
-                                        'emission.splash.localnotify',
-                                        ])
+angular.module('emission.controllers', ['emission.splash.updatecheck'])
 
 .controller('RootCtrl', function($scope) {})
 
 .controller('DashCtrl', function($scope) {})
 
 .controller('SplashCtrl', function($scope, $state, $interval, $rootScope, 
-    $ionicPlatform, $ionicPopup, $ionicPopover, UpdateCheck, LocalNotify)  {
+    $ionicPlatform, $ionicPopup, $ionicPopover, UpdateCheck)  {
   console.log('SplashCtrl invoked');
       // alert("attach debugger!");
       // PushNotify.startupInit();
