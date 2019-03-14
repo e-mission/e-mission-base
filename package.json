@@ -68,6 +68,6 @@
     "ionic-plugin-keyboard": "~2.2.1",
     "klaw-sync": "^3.0.2",
     "phonegap-plugin-barcodescanner": "^8.1.0",
-    "phonegap-plugin-push": "^2.1.2"
+    "phonegap-plugin-push": "=2.1.2"
   }
 }

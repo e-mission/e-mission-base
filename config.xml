@@ -34,7 +34,7 @@
         <resource-file src="google-services.json" target="google-services.json" />
     </platform>
     <icon src="resources/icon.png" />
-    <plugin name="phonegap-plugin-push" spec="^2.1.2">
+    <plugin name="phonegap-plugin-push" spec="=2.1.2">
         <variable name="FCM_VERSION" value="11.0.1" />
     </plugin>
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
