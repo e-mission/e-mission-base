@@ -1,6 +1,6 @@
 {
   "name": "edu.berkeley.eecs.embase",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "displayName": "emTripLog",
   "cordova": {
     "platforms": [
