@@ -35,7 +35,9 @@
       },
       "edu.berkeley.eecs.emission.cordova.auth": {},
       "edu.berkeley.eecs.emission.cordova.comm": {},
-      "edu.berkeley.eecs.emission.cordova.datacollection": {},
+      "edu.berkeley.eecs.emission.cordova.datacollection": {
+        "LOCATION_VERSION": "11.0.1"
+      },
       "edu.berkeley.eecs.emission.cordova.serversync": {},
       "edu.berkeley.eecs.emission.cordova.settings": {},
       "edu.berkeley.eecs.emission.cordova.transitionnotify": {},
@@ -56,7 +58,7 @@
     "cordova-plugin-whitelist": "~1.3.3",
     "cordova-plugin-x-socialsharing": "~5.2.1",
     "de.appplant.cordova.plugin.local-notification-ios9-fix": "https://github.com/shankari/cordova-plugin-local-notifications.git",
-    "e-mission-data-collection": "git+https://github.com/e-mission/e-mission-data-collection.git#v1.3.0",
+    "e-mission-data-collection": "git+https://github.com/e-mission/e-mission-data-collection.git#v1.3.1",
     "em-cordova-connection-settings": "git+https://github.com/e-mission/cordova-connection-settings.git#v1.2.0",
     "em-cordova-jwt-auth": "git+https://github.com/e-mission/cordova-jwt-auth.git#v1.5.0",
     "em-cordova-server-communication": "git+https://github.com/e-mission/cordova-server-communication.git#v1.2.0",
@@ -67,7 +69,7 @@
     "fs-extra": "^5.0.0",
     "ionic-plugin-keyboard": "~2.2.1",
     "klaw-sync": "^3.0.2",
-    "phonegap-plugin-barcodescanner": "^8.1.0",
+    "phonegap-plugin-barcodescanner": "git+https://github.com/phonegap/phonegap-plugin-barcodescanner.git#v8.0.1",
     "phonegap-plugin-push": "=2.1.2"
   }
 }
