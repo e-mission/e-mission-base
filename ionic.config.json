@@ -1,6 +1,9 @@
 {
   "name": "e-mission-phone",
-  "app_id": "e0d8cdec",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic1",
   "browsers": [
     {
       "platform": "android",
@@ -8,8 +11,5 @@
       "version": "12.41.296.5"
     }
   ],
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic1"
+  "id": "e0d8cdec"
 }
