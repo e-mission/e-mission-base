@@ -1,6 +1,9 @@
 # e-mission-base
 Base app that invites the user to customize the UI by scanning a QR code.
 
+[![osx-build-ios](https://github.com/e-mission/e-mission-base/workflows/osx-build-ios/badge.svg)](https://github.com/e-mission/e-mission-base/actions?query=workflow%3Aosx-ubuntu-build-android)
+[![osx-ubuntu-build-android](https://github.com/e-mission/e-mission-base/workflows/osx-ubuntu-build-android/badge.svg)](https://github.com/e-mission/e-mission-base/actions?query=workflow%3Aosx-build-ios)
+
 Installation instructions are the same as for the full-featured e-mission phone app.
 https://github.com/e-mission/e-mission-phone
 
