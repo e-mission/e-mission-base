@@ -62,4 +62,7 @@ jobs:
         echo $PATH
         which gradle
         gradle --version
+        echo "Create icon resources automatically"
+        npx ionic cordova resources
+        echo "Build android"
         npx cordova build android
