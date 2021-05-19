@@ -7,7 +7,7 @@ angular.module('emission.controllers', ['emission.splash.updatecheck'])
 .controller('DashCtrl', function($scope) {})
 
 .controller('SplashCtrl', function($scope, $state, $interval, $rootScope, 
-    $ionicPlatform, $ionicPopup, $ionicPopover, UpdateCheck)  {
+    $ionicPlatform, $ionicPopup, $ionicPopover, $window, UpdateCheck)  {
   console.log('SplashCtrl invoked');
       // alert("attach debugger!");
       // PushNotify.startupInit();
@@ -15,6 +15,14 @@ angular.module('emission.controllers', ['emission.splash.updatecheck'])
 
   $ionicPlatform.ready(function() {
     $scope.scanEnabled = true;
+  });
+
+  $ionicPopover.fromTemplateUrl('templates/study-consent.html', {
+    backdropClickToClose: true,
+    hardwareBackButtonClose: true,
+    scope: $rootScope
+  }).then(function(popover) {
+    $scope.consentPopover = popover;
   });
 
   $ionicPopover.fromTemplateUrl('templates/about-app.html', {
@@ -33,6 +41,16 @@ angular.module('emission.controllers', ['emission.splash.updatecheck'])
 
   $scope.hideDetails = function($event) {
     $scope.popover.hide($event)
+  }
+
+  $scope.showConsent = function($event) {
+    $window.cordova.InAppBrowser.open("https://e-mission.eecs.berkeley.edu/privacy",
+        '_system');
+    // $scope.consentPopover.show($event)
+  }
+
+  $scope.hideConsent = function($event) {
+    $scope.consentPopover.hide($event)
   }
 
   $scope.scanCode = function() {

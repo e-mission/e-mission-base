@@ -1,0 +1,52 @@
+<ion-popover-view>
+    <ion-content class="has-footer">
+        <div class="intro-text">
+            This app is a generalization of the e-mission open source platform
+            (https://github.com/e-mission/) intended to support research
+            studies around travel behavior. While the initial platform development
+            was at the University of California, Berkeley, this app is no
+            longer affliated with the university.  It is provided by the
+            primary developer (K. Shankari, shankari@damajash.org) as a service to the
+            research community.
+        </div>
+        <div class="intro-text">
+            This app automatically, in the background, tracks your location,
+            accelerometer, device-generated activity recognition and battery usage.
+            It uses this data to automatically generate a travel diary and
+            display it to you. It also allows you to optionally annotate the travel
+            diary with richer details or with experience information. 
+            When you launch the app, it logs information about your phone type
+            (android/iOS), make, model and version. This metadata helps the developer
+            to correlate app problems with specific phones (e.g.
+            https://dontkillmyapp.com/)
+            Since our code is open source, you can inspect the data the app collects
+            in <a href="https://github.com/e-mission/e-mission-data-collection.git">our
+            repo</a>.
+        </div>
+        <div class="intro-text">
+            To ensure proper handling of your data, the primary developer (K.
+            Shankari) requires that researchers submit an approved Institutional Review
+            Board (IRB) protocol before providing them with access to the app. The
+            consent document <b>for the study you are joining</b> will outline
+            the study-specific data handling and sharing procedures. Please read it
+            carefully before accepting it. Background tracking will start only
+            after you accept the study-specific consent document.
+
+            The researcher conducting the study may choose to compensate you
+            for your time, as described in the consent document.
+        </div>
+
+        If you have any questions about this app, please contact the lead
+        developer (K. Shankari, shankari@damajash.org). If you have questions about the
+        study you are participating in, please contact the researcher who provided you
+        with the QR code.
+
+        If you agree to join the study, scan the QR code or the link below to
+        proceed. If you do not wish to join the study, please uninstall the app.
+
+        <ion-footer-bar class="bar-positive">
+          <button class="button button-block button-clear" ng-click="hideConsent($event)">
+            Close
+          </button>
+        </ion-footer-bar>
+</ion-popover-view>
